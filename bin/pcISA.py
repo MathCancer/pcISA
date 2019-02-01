@@ -22,7 +22,7 @@ tab_layout = widgets.Layout(width='auto',   # border='2px solid black',
 # create the tabs, but don't display yet
 config_tab = ConfigTab()
 
-full_filename = os.path.abspath('data/config_cancerbots.xml')
+full_filename = os.path.abspath('data/PhysiCell_settings.xml')
 tree = ET.parse(full_filename)  # this file cannot be overwritten; part of tool distro
 xml_root = tree.getroot()
 user_tab = UserTab()
@@ -35,8 +35,8 @@ nanoHUB_flag = "home/nanohub" in os.environ['HOME']  # True/False (running on na
 def read_config_cb(_b):
     # with debug_view:
     #     print("read_config_cb", read_config.value)
-        # e.g.  "DEFAULT" -> read_config /Users/heiland/dev/pc4cancerbots/data/nanobio_settings.xml
-        #       "t360.xml" -> read_config /Users/heiland/.local/share/pc4cancerbots/t360.xml
+        # e.g.  "DEFAULT" -> read_config /Users/heiland/dev/pcISA/data/nanobio_settings.xml
+        #       "t360.xml" -> read_config /Users/heiland/.local/share/pcISA/t360.xml
 
     if read_config.value is None:  #occurs when a Run just finishes and we update pulldown with the new cache dir??
         # with debug_view:
@@ -71,7 +71,7 @@ def read_config_cb(_b):
 # Using the param values in the GUI, write a new .xml config file
 def write_config_file(name):
     # Read in the default xml config file, just to get a valid 'root' to populate a new one
-    full_filename = os.path.abspath('data/config_cancerbots.xml')
+    full_filename = os.path.abspath('data/PhysiCell_settings.xml')
     # with debug_view:
     #     print("write_config_file: based on ",full_filename)
     tree = ET.parse(full_filename)  # this file cannot be overwritten; part of tool distro
@@ -83,7 +83,7 @@ def write_config_file(name):
 
 # callback from write_config_button
 def write_config_file_cb(b):
-    dirname = os.path.expanduser('~/.local/share/pc4cancerbots')
+    dirname = os.path.expanduser('~/.local/share/pcISA')
     val = write_config_box.value
     if val == '':
         val = write_config_box.placeholder
@@ -93,8 +93,8 @@ def write_config_file_cb(b):
 # Fill the "Load Config" dropdown widget with valid cached results (and 
 # default & previous config options)
 def get_config_files():
-    cf = {'DEFAULT': os.path.abspath('data/config_cancerbots.xml')}
-    dirname = os.path.expanduser('~/.local/share/pc4cancerbots')
+    cf = {'DEFAULT': os.path.abspath('data/PhysiCell_settings.xml')}
+    dirname = os.path.expanduser('~/.local/share/pcISA')
     try:
         os.makedirs(dirname)
     except:
@@ -105,12 +105,12 @@ def get_config_files():
 
     # Find the dir path (full_path) to the cached dirs
     if nanoHUB_flag:
-        full_path = os.path.expanduser("~/data/results/.submit_cache/pc4cancerbots")
+        full_path = os.path.expanduser("~/data/results/.submit_cache/pcISA")
     else:
         # local cache
         try:
             cachedir = os.environ['CACHEDIR']
-            full_path = os.path.join(cachedir, "pc4cancerbots")
+            full_path = os.path.join(cachedir, "pcISA")
         except:
             print("Exception in get_config_files")
             return cf
@@ -153,7 +153,7 @@ def run_done_func(s, rdir):
     
     if nanoHUB_flag:
         # Email the user that their job has completed
-        os.system("submit  mail2self -s 'nanoHUB pc4cancerbots' -t 'Your Run completed.'&")
+        os.system("submit  mail2self -s 'nanoHUB pcISA' -t 'Your Run completed.'&")
 
     # save the config file to the cache directory
     shutil.copy('config.xml', rdir)
@@ -208,7 +208,7 @@ def run_sim_func(s):
         if remote_cb.value:
             # s.run(run_name, "-n 8 -w 1440 pc4nanobio-r77 config.xml")  # will wait in standby queue forever
             # s.run(run_name, "-w 7200 pc4nanobio-r77 config.xml") 
-            s.run(run_name, "-v ncn-hub_M@brown -n 8 -w 1440 pc4cancerbots-r7 config.xml") 
+            s.run(run_name, "-v ncn-hub_M@brown -n 8 -w 1440 pcISA-r7 config.xml") 
         else:
             # read_config.index = 0   # reset Dropdown 'Load Config' to 'DEFAULT' when Run interactively
             s.run(run_name, "--local ../bin/cancerbots config.xml")
@@ -236,13 +236,13 @@ if nanoHUB_flag:
     run_button = Submit(label='Run',
                        start_func=run_sim_func,
                         done_func=run_done_func,
-                        cachename='pc4cancerbots',
+                        cachename='pcISA',
                         showcache=False,
                         outcb=outcb)
 else:
     run_button = RunCommand(start_func=run_sim_func,
                             done_func=run_done_func,
-                            cachename='pc4cancerbots',
+                            cachename='pcISA',
                             showcache=False,
                             outcb=outcb)  
 

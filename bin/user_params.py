@@ -19,284 +19,320 @@ class UserTab(object):
         style = {'description_width': '250px'}
         layout = {'width': '400px'}
 
-        self.random_seed = IntText(
-          description='random_seed',
-          value=0,
-          step=1,
+        self.resource_D = FloatText(
+          description='resource_D',
+          value=100000,
+          step=10000,
           style=style, layout=layout)
 
-        self.therapy_activation_time = FloatText(
-          description='therapy_activation_time',
-          value=10080,
-          step=1000,
-          style=style, layout=layout)
-
-        self.save_interval_after_therapy_start = FloatText(
-          description='save_interval_after_therapy_start',
-          value=3,
-          step=0.1,
-          style=style, layout=layout)
-
-        self.cargo_o2_relative_uptake = FloatText(
-          description='cargo_o2_relative_uptake',
+        self.resource_lambda = FloatText(
+          description='resource_lambda',
           value=0.1,
           step=0.01,
           style=style, layout=layout)
 
-        self.cargo_apoptosis_rate = FloatText(
-          description='cargo_apoptosis_rate',
-          value=4.065e-5,
-          step=1e-05,
+        self.quorum_D = FloatText(
+          description='quorum_D',
+          value=100000,
+          step=10000,
           style=style, layout=layout)
 
-        self.cargo_relative_adhesion = FloatText(
-          description='cargo_relative_adhesion',
-          value=0,
-          step=0.01,
-          style=style, layout=layout)
-
-        self.cargo_relative_repulsion = FloatText(
-          description='cargo_relative_repulsion',
-          value=5,
-          step=0.1,
-          style=style, layout=layout)
-
-        self.worker_o2_relative_uptake = FloatText(
-          description='worker_o2_relative_uptake',
-          value=0.1,
-          step=0.01,
-          style=style, layout=layout)
-
-        self.worker_apoptosis_rate = FloatText(
-          description='worker_apoptosis_rate',
-          value=0,
-          step=0.01,
-          style=style, layout=layout)
-
-        self.worker_motility_persistence_time = FloatText(
-          description='worker_motility_persistence_time',
-          value=5.0,
-          step=0.1,
-          style=style, layout=layout)
-
-        self.worker_migration_speed = FloatText(
-          description='worker_migration_speed',
-          value=2.0,
-          step=0.1,
-          style=style, layout=layout)
-
-        self.worker_relative_adhesion = FloatText(
-          description='worker_relative_adhesion',
-          value=0,
-          step=0.01,
-          style=style, layout=layout)
-
-        self.worker_relative_repulsion = FloatText(
-          description='worker_relative_repulsion',
-          value=5,
-          step=0.1,
-          style=style, layout=layout)
-
-        self.elastic_coefficient = FloatText(
-          description='elastic_coefficient',
-          value=0.05,
-          step=0.01,
-          style=style, layout=layout)
-
-        self.receptor = FloatText(
-          description='receptor',
-          value=0.0,
-          step=0.01,
-          style=style, layout=layout)
-
-        self.cargo_release_o2_threshold = FloatText(
-          description='cargo_release_o2_threshold',
+        self.quorum_lambda = FloatText(
+          description='quorum_lambda',
           value=10,
           step=1,
           style=style, layout=layout)
 
-        self.max_relative_cell_adhesion_distance = FloatText(
-          description='max_relative_cell_adhesion_distance',
-          value=1.25,
+        self.death_signal_D = FloatText(
+          description='death_signal_D',
+          value=40000,
+          step=1000,
+          style=style, layout=layout)
+
+        self.death_signal_lambda = FloatText(
+          description='death_signal_lambda',
+          value=1,
           step=0.1,
           style=style, layout=layout)
 
-        self.damage_rate = FloatText(
-          description='damage_rate',
-          value=0.03333,
+        self.signal_D = FloatText(
+          description='signal_D',
+          value=25000,
+          step=1000,
+          style=style, layout=layout)
+
+        self.signal_lambda = FloatText(
+          description='signal_lambda',
+          value=.1,
           step=0.01,
           style=style, layout=layout)
 
-        self.repair_rate = FloatText(
-          description='repair_rate',
-          value=0.004167,
-          step=0.001,
+        self.poison_D = FloatText(
+          description='poison_D',
+          value=50000,
+          step=1000,
           style=style, layout=layout)
 
-        self.drug_death_rate = FloatText(
-          description='drug_death_rate',
-          value=0.004167,
-          step=0.001,
-          style=style, layout=layout)
-
-        self.worker_fraction = FloatText(
-          description='worker_fraction',
-          value=0.10,
-          step=0.01,
-          style=style, layout=layout)
-
-        self.number_of_injected_cells = IntText(
-          description='number_of_injected_cells',
-          value=500,
-          step=10,
-          style=style, layout=layout)
-
-        self.tumor_radius = FloatText(
-          description='tumor_radius',
-          value=200,
-          step=10,
-          style=style, layout=layout)
-
-        self.max_elastic_displacement = FloatText(
-          description='max_elastic_displacement',
-          value=50.0,
+        self.poison_lambda = FloatText(
+          description='poison_lambda',
+          value=20,
           step=1,
           style=style, layout=layout)
 
-        self.attachment_receptor_threshold = FloatText(
-          description='attachment_receptor_threshold',
-          value=0.1,
-          step=0.01,
-          style=style, layout=layout)
-
-        self.max_attachment_distance = FloatText(
-          description='max_attachment_distance',
-          value=18.0,
+        self.number_of_invaders = IntText(
+          description='number_of_invaders',
+          value=15,
           step=1,
           style=style, layout=layout)
 
-        self.min_attachment_distance = FloatText(
-          description='min_attachment_distance',
-          value=14.0,
+        self.number_of_suppliers = IntText(
+          description='number_of_suppliers',
+          value=50,
           step=1,
           style=style, layout=layout)
 
-        self.motility_shutdown_detection_threshold = FloatText(
-          description='motility_shutdown_detection_threshold',
+        self.number_of_scouts = IntText(
+          description='number_of_scouts',
+          value=10,
+          step=1,
+          style=style, layout=layout)
+
+        self.number_of_attackers = IntText(
+          description='number_of_attackers',
+          value=50,
+          step=1,
+          style=style, layout=layout)
+
+        self.invader_max_birth_rate = FloatText(
+          description='invader_max_birth_rate',
+          value=0.0028,
+          step=0.0001,
+          style=style, layout=layout)
+
+        self.invader_max_death_rate = FloatText(
+          description='invader_max_death_rate',
           value=0.001,
           step=0.0001,
           style=style, layout=layout)
 
-        self.attached_worker_migration_bias = FloatText(
-          description='attached_worker_migration_bias',
+        self.invader_persistence_time = FloatText(
+          description='invader_persistence_time',
+          value=15,
+          step=1,
+          style=style, layout=layout)
+
+        self.invader_migration_speed = FloatText(
+          description='invader_migration_speed',
+          value=0.25,
+          step=0.01,
+          style=style, layout=layout)
+
+        self.invader_migration_bias = FloatText(
+          description='invader_migration_bias',
           value=0.5,
           step=0.1,
           style=style, layout=layout)
 
-        self.unattached_worker_migration_bias = FloatText(
-          description='unattached_worker_migration_bias',
-          value=0.5,
+        self.invader_secretion_rate = FloatText(
+          description='invader_secretion_rate',
+          value=100,
+          step=10,
+          style=style, layout=layout)
+
+        self.invader_quorum_weight = FloatText(
+          description='invader_quorum_weight',
+          value=.1,
+          step=0.01,
+          style=style, layout=layout)
+
+        self.scout_persistence_time = FloatText(
+          description='scout_persistence_time',
+          value=15,
+          step=1,
+          style=style, layout=layout)
+
+        self.scout_migration_speed = FloatText(
+          description='scout_migration_speed',
+          value=.5,
           step=0.1,
+          style=style, layout=layout)
+
+        self.scout_migration_bias = FloatText(
+          description='scout_migration_bias',
+          value=0.125,
+          step=0.01,
+          style=style, layout=layout)
+
+        self.scout_secretion_rate = FloatText(
+          description='scout_secretion_rate',
+          value=100,
+          step=10,
+          style=style, layout=layout)
+
+        self.scout_signal_threshold = FloatText(
+          description='scout_signal_threshold',
+          value=0.1,
+          step=0.01,
+          style=style, layout=layout)
+
+        self.attacker_max_birth_rate = FloatText(
+          description='attacker_max_birth_rate',
+          value=0.0005,
+          step=0.0001,
+          style=style, layout=layout)
+
+        self.attacker_max_death_rate = FloatText(
+          description='attacker_max_death_rate',
+          value=0.0001,
+          step=1e-05,
+          style=style, layout=layout)
+
+        self.attacker_persistence_time = FloatText(
+          description='attacker_persistence_time',
+          value=15,
+          step=1,
+          style=style, layout=layout)
+
+        self.attacker_migration_speed = FloatText(
+          description='attacker_migration_speed',
+          value=1,
+          step=0.1,
+          style=style, layout=layout)
+
+        self.attacker_migration_bias = FloatText(
+          description='attacker_migration_bias',
+          value=0.25,
+          step=0.01,
+          style=style, layout=layout)
+
+        self.attacker_secretion_rate = FloatText(
+          description='attacker_secretion_rate',
+          value=100,
+          step=10,
+          style=style, layout=layout)
+
+        self.attacker_signal_threshold = FloatText(
+          description='attacker_signal_threshold',
+          value=0.1,
+          step=0.01,
+          style=style, layout=layout)
+
+        self.supplier_secretion_rate = FloatText(
+          description='supplier_secretion_rate',
+          value=100,
+          step=10,
           style=style, layout=layout)
 
         self.tab = VBox([
-          HBox([self.random_seed, Label('')]), 
-          HBox([self.therapy_activation_time, Label('min')]), 
-          HBox([self.save_interval_after_therapy_start, Label('min')]), 
-          HBox([self.cargo_o2_relative_uptake, Label('')]), 
-          HBox([self.cargo_apoptosis_rate, Label('1/min')]), 
-          HBox([self.cargo_relative_adhesion, Label('')]), 
-          HBox([self.cargo_relative_repulsion, Label('')]), 
-          HBox([self.worker_o2_relative_uptake, Label('1/min')]), 
-          HBox([self.worker_apoptosis_rate, Label('1/min')]), 
-          HBox([self.worker_motility_persistence_time, Label('min')]), 
-          HBox([self.worker_migration_speed, Label('micron/min')]), 
-          HBox([self.worker_relative_adhesion, Label('')]), 
-          HBox([self.worker_relative_repulsion, Label('')]), 
-          HBox([self.elastic_coefficient, Label('1/min')]), 
-          HBox([self.receptor, Label('')]), 
-          HBox([self.cargo_release_o2_threshold, Label('mmHg')]), 
-          HBox([self.max_relative_cell_adhesion_distance, Label('')]), 
-          HBox([self.damage_rate, Label('1/min')]), 
-          HBox([self.repair_rate, Label('1/min')]), 
-          HBox([self.drug_death_rate, Label('1/min')]), 
-          HBox([self.worker_fraction, Label('')]), 
-          HBox([self.number_of_injected_cells, Label('')]), 
-          HBox([self.tumor_radius, Label('micron')]), 
-          HBox([self.max_elastic_displacement, Label('micron')]), 
-          HBox([self.attachment_receptor_threshold, Label('')]), 
-          HBox([self.max_attachment_distance, Label('micron')]), 
-          HBox([self.min_attachment_distance, Label('micron')]), 
-          HBox([self.motility_shutdown_detection_threshold, Label('')]), 
-          HBox([self.attached_worker_migration_bias, Label('')]), 
-          HBox([self.unattached_worker_migration_bias, Label('')]), 
+          HBox([self.resource_D, Label('micron^2/min (resource diffusion coefficient)')]), 
+          HBox([self.resource_lambda, Label('1/min (resource decay rate)')]), 
+          HBox([self.quorum_D, Label('micron^2/min (quorum diffusion coefficient)')]), 
+          HBox([self.quorum_lambda, Label('1/min (quorum decay rate)')]), 
+          HBox([self.death_signal_D, Label('micron^2/min (death signal diffusion coefficient)')]), 
+          HBox([self.death_signal_lambda, Label('1/min (death signal decay rate)')]), 
+          HBox([self.signal_D, Label('micron^2/min (attack signal diffusion coefficient)')]), 
+          HBox([self.signal_lambda, Label('1/min (attack signal decay rate)')]), 
+          HBox([self.poison_D, Label('micron^2/min (poison diffusion coefficient)')]), 
+          HBox([self.poison_lambda, Label('1/min (poison decay rate)')]), 
+          HBox([self.number_of_invaders, Label(' (number of randomly placed invaders)')]), 
+          HBox([self.number_of_suppliers, Label(' (number of randomly placed suppliers)')]), 
+          HBox([self.number_of_scouts, Label(' (number of randomly placed scouts)')]), 
+          HBox([self.number_of_attackers, Label(' (number of randomly placed attackers)')]), 
+          HBox([self.invader_max_birth_rate, Label('1/min (max birth rate for invaders)')]), 
+          HBox([self.invader_max_death_rate, Label('1/min (max death rate for invaders)')]), 
+          HBox([self.invader_persistence_time, Label('min (persistence time for invader migration)')]), 
+          HBox([self.invader_migration_speed, Label('micron/min (speed of invader cells)')]), 
+          HBox([self.invader_migration_bias, Label(' (invader migration bias)')]), 
+          HBox([self.invader_secretion_rate, Label('1/min (rate invaders secrete their signals)')]), 
+          HBox([self.invader_quorum_weight, Label(' (motile direction = w*grad(Q) - (1-w)*grad(D))')]), 
+          HBox([self.scout_persistence_time, Label('min (persistence time for scout migration)')]), 
+          HBox([self.scout_migration_speed, Label('micron/min (speed of scout cells)')]), 
+          HBox([self.scout_migration_bias, Label(' (scout migration bias)')]), 
+          HBox([self.scout_secretion_rate, Label('1/min (rate scouts secrete their signals)')]), 
+          HBox([self.scout_signal_threshold, Label(' (scouts release S if Q > threshold)')]), 
+          HBox([self.attacker_max_birth_rate, Label('1/min (max birth rate for attackers)')]), 
+          HBox([self.attacker_max_death_rate, Label('1/min (max death rate for attackers)')]), 
+          HBox([self.attacker_persistence_time, Label('min (persistence time for attacker migration)')]), 
+          HBox([self.attacker_migration_speed, Label('micron/min (speed of attacker cells)')]), 
+          HBox([self.attacker_migration_bias, Label(' (attacker migration bias)')]), 
+          HBox([self.attacker_secretion_rate, Label('1/min (rate attackers secrete their signals)')]), 
+          HBox([self.attacker_signal_threshold, Label(' (attackers release P if S > threshold)')]), 
+          HBox([self.supplier_secretion_rate, Label('1/min (rate suppliers release resource)')]), 
         ])
 
     # Populate the GUI widgets with values from the XML
     def fill_gui(self, xml_root):
         uep = xml_root.find('.//user_parameters')  # find unique entry point into XML
-        self.random_seed.value = int(uep.find('.//random_seed').text)
-        self.therapy_activation_time.value = float(uep.find('.//therapy_activation_time').text)
-        self.save_interval_after_therapy_start.value = float(uep.find('.//save_interval_after_therapy_start').text)
-        self.cargo_o2_relative_uptake.value = float(uep.find('.//cargo_o2_relative_uptake').text)
-        self.cargo_apoptosis_rate.value = float(uep.find('.//cargo_apoptosis_rate').text)
-        self.cargo_relative_adhesion.value = float(uep.find('.//cargo_relative_adhesion').text)
-        self.cargo_relative_repulsion.value = float(uep.find('.//cargo_relative_repulsion').text)
-        self.worker_o2_relative_uptake.value = float(uep.find('.//worker_o2_relative_uptake').text)
-        self.worker_apoptosis_rate.value = float(uep.find('.//worker_apoptosis_rate').text)
-        self.worker_motility_persistence_time.value = float(uep.find('.//worker_motility_persistence_time').text)
-        self.worker_migration_speed.value = float(uep.find('.//worker_migration_speed').text)
-        self.worker_relative_adhesion.value = float(uep.find('.//worker_relative_adhesion').text)
-        self.worker_relative_repulsion.value = float(uep.find('.//worker_relative_repulsion').text)
-        self.elastic_coefficient.value = float(uep.find('.//elastic_coefficient').text)
-        self.receptor.value = float(uep.find('.//receptor').text)
-        self.cargo_release_o2_threshold.value = float(uep.find('.//cargo_release_o2_threshold').text)
-        self.max_relative_cell_adhesion_distance.value = float(uep.find('.//max_relative_cell_adhesion_distance').text)
-        self.damage_rate.value = float(uep.find('.//damage_rate').text)
-        self.repair_rate.value = float(uep.find('.//repair_rate').text)
-        self.drug_death_rate.value = float(uep.find('.//drug_death_rate').text)
-        self.worker_fraction.value = float(uep.find('.//worker_fraction').text)
-        self.number_of_injected_cells.value = int(uep.find('.//number_of_injected_cells').text)
-        self.tumor_radius.value = float(uep.find('.//tumor_radius').text)
-        self.max_elastic_displacement.value = float(uep.find('.//max_elastic_displacement').text)
-        self.attachment_receptor_threshold.value = float(uep.find('.//attachment_receptor_threshold').text)
-        self.max_attachment_distance.value = float(uep.find('.//max_attachment_distance').text)
-        self.min_attachment_distance.value = float(uep.find('.//min_attachment_distance').text)
-        self.motility_shutdown_detection_threshold.value = float(uep.find('.//motility_shutdown_detection_threshold').text)
-        self.attached_worker_migration_bias.value = float(uep.find('.//attached_worker_migration_bias').text)
-        self.unattached_worker_migration_bias.value = float(uep.find('.//unattached_worker_migration_bias').text)
+        self.resource_D.value = float(uep.find('.//resource_D').text)
+        self.resource_lambda.value = float(uep.find('.//resource_lambda').text)
+        self.quorum_D.value = float(uep.find('.//quorum_D').text)
+        self.quorum_lambda.value = float(uep.find('.//quorum_lambda').text)
+        self.death_signal_D.value = float(uep.find('.//death_signal_D').text)
+        self.death_signal_lambda.value = float(uep.find('.//death_signal_lambda').text)
+        self.signal_D.value = float(uep.find('.//signal_D').text)
+        self.signal_lambda.value = float(uep.find('.//signal_lambda').text)
+        self.poison_D.value = float(uep.find('.//poison_D').text)
+        self.poison_lambda.value = float(uep.find('.//poison_lambda').text)
+        self.number_of_invaders.value = int(uep.find('.//number_of_invaders').text)
+        self.number_of_suppliers.value = int(uep.find('.//number_of_suppliers').text)
+        self.number_of_scouts.value = int(uep.find('.//number_of_scouts').text)
+        self.number_of_attackers.value = int(uep.find('.//number_of_attackers').text)
+        self.invader_max_birth_rate.value = float(uep.find('.//invader_max_birth_rate').text)
+        self.invader_max_death_rate.value = float(uep.find('.//invader_max_death_rate').text)
+        self.invader_persistence_time.value = float(uep.find('.//invader_persistence_time').text)
+        self.invader_migration_speed.value = float(uep.find('.//invader_migration_speed').text)
+        self.invader_migration_bias.value = float(uep.find('.//invader_migration_bias').text)
+        self.invader_secretion_rate.value = float(uep.find('.//invader_secretion_rate').text)
+        self.invader_quorum_weight.value = float(uep.find('.//invader_quorum_weight').text)
+        self.scout_persistence_time.value = float(uep.find('.//scout_persistence_time').text)
+        self.scout_migration_speed.value = float(uep.find('.//scout_migration_speed').text)
+        self.scout_migration_bias.value = float(uep.find('.//scout_migration_bias').text)
+        self.scout_secretion_rate.value = float(uep.find('.//scout_secretion_rate').text)
+        self.scout_signal_threshold.value = float(uep.find('.//scout_signal_threshold').text)
+        self.attacker_max_birth_rate.value = float(uep.find('.//attacker_max_birth_rate').text)
+        self.attacker_max_death_rate.value = float(uep.find('.//attacker_max_death_rate').text)
+        self.attacker_persistence_time.value = float(uep.find('.//attacker_persistence_time').text)
+        self.attacker_migration_speed.value = float(uep.find('.//attacker_migration_speed').text)
+        self.attacker_migration_bias.value = float(uep.find('.//attacker_migration_bias').text)
+        self.attacker_secretion_rate.value = float(uep.find('.//attacker_secretion_rate').text)
+        self.attacker_signal_threshold.value = float(uep.find('.//attacker_signal_threshold').text)
+        self.supplier_secretion_rate.value = float(uep.find('.//supplier_secretion_rate').text)
 
 
     # Read values from the GUI widgets to enable editing XML
     def fill_xml(self, xml_root):
         uep = xml_root.find('.//user_parameters')  # find unique entry point into XML 
-        uep.find('.//random_seed').text = str(self.random_seed.value)
-        uep.find('.//therapy_activation_time').text = str(self.therapy_activation_time.value)
-        uep.find('.//save_interval_after_therapy_start').text = str(self.save_interval_after_therapy_start.value)
-        uep.find('.//cargo_o2_relative_uptake').text = str(self.cargo_o2_relative_uptake.value)
-        uep.find('.//cargo_apoptosis_rate').text = str(self.cargo_apoptosis_rate.value)
-        uep.find('.//cargo_relative_adhesion').text = str(self.cargo_relative_adhesion.value)
-        uep.find('.//cargo_relative_repulsion').text = str(self.cargo_relative_repulsion.value)
-        uep.find('.//worker_o2_relative_uptake').text = str(self.worker_o2_relative_uptake.value)
-        uep.find('.//worker_apoptosis_rate').text = str(self.worker_apoptosis_rate.value)
-        uep.find('.//worker_motility_persistence_time').text = str(self.worker_motility_persistence_time.value)
-        uep.find('.//worker_migration_speed').text = str(self.worker_migration_speed.value)
-        uep.find('.//worker_relative_adhesion').text = str(self.worker_relative_adhesion.value)
-        uep.find('.//worker_relative_repulsion').text = str(self.worker_relative_repulsion.value)
-        uep.find('.//elastic_coefficient').text = str(self.elastic_coefficient.value)
-        uep.find('.//receptor').text = str(self.receptor.value)
-        uep.find('.//cargo_release_o2_threshold').text = str(self.cargo_release_o2_threshold.value)
-        uep.find('.//max_relative_cell_adhesion_distance').text = str(self.max_relative_cell_adhesion_distance.value)
-        uep.find('.//damage_rate').text = str(self.damage_rate.value)
-        uep.find('.//repair_rate').text = str(self.repair_rate.value)
-        uep.find('.//drug_death_rate').text = str(self.drug_death_rate.value)
-        uep.find('.//worker_fraction').text = str(self.worker_fraction.value)
-        uep.find('.//number_of_injected_cells').text = str(self.number_of_injected_cells.value)
-        uep.find('.//tumor_radius').text = str(self.tumor_radius.value)
-        uep.find('.//max_elastic_displacement').text = str(self.max_elastic_displacement.value)
-        uep.find('.//attachment_receptor_threshold').text = str(self.attachment_receptor_threshold.value)
-        uep.find('.//max_attachment_distance').text = str(self.max_attachment_distance.value)
-        uep.find('.//min_attachment_distance').text = str(self.min_attachment_distance.value)
-        uep.find('.//motility_shutdown_detection_threshold').text = str(self.motility_shutdown_detection_threshold.value)
-        uep.find('.//attached_worker_migration_bias').text = str(self.attached_worker_migration_bias.value)
-        uep.find('.//unattached_worker_migration_bias').text = str(self.unattached_worker_migration_bias.value)
+        uep.find('.//resource_D').text = str(self.resource_D.value)
+        uep.find('.//resource_lambda').text = str(self.resource_lambda.value)
+        uep.find('.//quorum_D').text = str(self.quorum_D.value)
+        uep.find('.//quorum_lambda').text = str(self.quorum_lambda.value)
+        uep.find('.//death_signal_D').text = str(self.death_signal_D.value)
+        uep.find('.//death_signal_lambda').text = str(self.death_signal_lambda.value)
+        uep.find('.//signal_D').text = str(self.signal_D.value)
+        uep.find('.//signal_lambda').text = str(self.signal_lambda.value)
+        uep.find('.//poison_D').text = str(self.poison_D.value)
+        uep.find('.//poison_lambda').text = str(self.poison_lambda.value)
+        uep.find('.//number_of_invaders').text = str(self.number_of_invaders.value)
+        uep.find('.//number_of_suppliers').text = str(self.number_of_suppliers.value)
+        uep.find('.//number_of_scouts').text = str(self.number_of_scouts.value)
+        uep.find('.//number_of_attackers').text = str(self.number_of_attackers.value)
+        uep.find('.//invader_max_birth_rate').text = str(self.invader_max_birth_rate.value)
+        uep.find('.//invader_max_death_rate').text = str(self.invader_max_death_rate.value)
+        uep.find('.//invader_persistence_time').text = str(self.invader_persistence_time.value)
+        uep.find('.//invader_migration_speed').text = str(self.invader_migration_speed.value)
+        uep.find('.//invader_migration_bias').text = str(self.invader_migration_bias.value)
+        uep.find('.//invader_secretion_rate').text = str(self.invader_secretion_rate.value)
+        uep.find('.//invader_quorum_weight').text = str(self.invader_quorum_weight.value)
+        uep.find('.//scout_persistence_time').text = str(self.scout_persistence_time.value)
+        uep.find('.//scout_migration_speed').text = str(self.scout_migration_speed.value)
+        uep.find('.//scout_migration_bias').text = str(self.scout_migration_bias.value)
+        uep.find('.//scout_secretion_rate').text = str(self.scout_secretion_rate.value)
+        uep.find('.//scout_signal_threshold').text = str(self.scout_signal_threshold.value)
+        uep.find('.//attacker_max_birth_rate').text = str(self.attacker_max_birth_rate.value)
+        uep.find('.//attacker_max_death_rate').text = str(self.attacker_max_death_rate.value)
+        uep.find('.//attacker_persistence_time').text = str(self.attacker_persistence_time.value)
+        uep.find('.//attacker_migration_speed').text = str(self.attacker_migration_speed.value)
+        uep.find('.//attacker_migration_bias').text = str(self.attacker_migration_bias.value)
+        uep.find('.//attacker_secretion_rate').text = str(self.attacker_secretion_rate.value)
+        uep.find('.//attacker_signal_threshold').text = str(self.attacker_signal_threshold.value)
+        uep.find('.//supplier_secretion_rate').text = str(self.supplier_secretion_rate.value)
