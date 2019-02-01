@@ -881,8 +881,31 @@ void Microenvironment::compute_all_gradient_vectors( void )
 	{
 		for( unsigned int j=0; j < mesh.y_coordinates.size() ; j++ )
 		{
+			// endcaps 
+			for( unsigned int q=0; q < number_of_densities() ; q++ )
+			{
+				int i = 0; 
+				int n = voxel_index(i,j,k);
+				// x-derivative of qth substrate at voxel n
+				gradient_vectors[n][q][0] = (*p_density_vectors)[n+thomas_i_jump][q]; 
+				gradient_vectors[n][q][0] -= (*p_density_vectors)[n][q]; 
+				gradient_vectors[n][q][0] /= mesh.dx; 
+				
+				gradient_vector_computed[n] = true; 
+			}
+			for( unsigned int q=0; q < number_of_densities() ; q++ )
+			{
+				int i = mesh.x_coordinates.size()-1; 
+				int n = voxel_index(i,j,k);
+				// x-derivative of qth substrate at voxel n
+				gradient_vectors[n][q][0] = (*p_density_vectors)[n][q]; 
+				gradient_vectors[n][q][0] -= (*p_density_vectors)[n-thomas_i_jump][q]; 
+				gradient_vectors[n][q][0] /= mesh.dx; 
+				
+				gradient_vector_computed[n] = true; 
+			}
 			
-			for( unsigned int i=1; i < mesh.x_coordinates.size()-1 ; i++ )
+			for( unsigned int i=1; i < mesh.x_coordinates.size()-1 ; i++ ) 
 			{
 				for( unsigned int q=0; q < number_of_densities() ; q++ )
 				{
@@ -904,6 +927,30 @@ void Microenvironment::compute_all_gradient_vectors( void )
 	{
 		for( unsigned int i=0; i < mesh.x_coordinates.size() ; i++ )
 		{
+			// endcaps 
+			for( unsigned int q=0; q < number_of_densities() ; q++ )
+			{
+				int j = 0; 
+				int n = voxel_index(i,j,k);
+				// x-derivative of qth substrate at voxel n
+				gradient_vectors[n][q][1] = (*p_density_vectors)[n+thomas_j_jump][q]; 
+				gradient_vectors[n][q][1] -= (*p_density_vectors)[n][q]; 
+				gradient_vectors[n][q][1] /= mesh.dy; 
+				
+				gradient_vector_computed[n] = true; 
+			}
+			for( unsigned int q=0; q < number_of_densities() ; q++ )
+			{
+				int j = mesh.y_coordinates.size()-1; 
+				int n = voxel_index(i,j,k);
+				// x-derivative of qth substrate at voxel n
+				gradient_vectors[n][q][1] = (*p_density_vectors)[n][q]; 
+				gradient_vectors[n][q][1] -= (*p_density_vectors)[n-thomas_j_jump][q]; 
+				gradient_vectors[n][q][1] /= mesh.dy; 
+				
+				gradient_vector_computed[n] = true; 
+			}			
+			
 			
 			for( unsigned int j=1; j < mesh.y_coordinates.size()-1 ; j++ )
 			{
@@ -926,6 +973,30 @@ void Microenvironment::compute_all_gradient_vectors( void )
 	{
 		for( unsigned int i=0; i < mesh.x_coordinates.size() ; i++ )
 		{
+			// endcaps 
+			for( unsigned int q=0; q < number_of_densities() ; q++ )
+			{
+				int k = 0; 
+				int n = voxel_index(i,j,k);
+				// x-derivative of qth substrate at voxel n
+				gradient_vectors[n][q][2] = (*p_density_vectors)[n+thomas_k_jump][q]; 
+				gradient_vectors[n][q][2] -= (*p_density_vectors)[n][q]; 
+				gradient_vectors[n][q][2] /= mesh.dz; 
+				
+				gradient_vector_computed[n] = true; 
+			}
+			for( unsigned int q=0; q < number_of_densities() ; q++ )
+			{
+				int k = mesh.z_coordinates.size()-1; 
+				int n = voxel_index(i,j,k);
+				// x-derivative of qth substrate at voxel n
+				gradient_vectors[n][q][2] = (*p_density_vectors)[n][q]; 
+				gradient_vectors[n][q][2] -= (*p_density_vectors)[n-thomas_k_jump][q]; 
+				gradient_vectors[n][q][2] /= mesh.dz; 
+				
+				gradient_vector_computed[n] = true; 
+			}			
+			
 			
 			for( unsigned int k=1; k < mesh.z_coordinates.size()-1 ; k++ )
 			{
@@ -963,6 +1034,7 @@ void Microenvironment::compute_gradient_vector( int n )
 	}	
 	
 	indices = cartesian_indices( n );
+	std::cout << indices[0] << " " << indices[1] << " " << indices[2] << std::endl; 
 	
 	// d/dx 
 	if( indices[0] > 0 && indices[0] < mesh.x_coordinates.size()-1 )

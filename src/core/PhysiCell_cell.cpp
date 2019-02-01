@@ -578,6 +578,32 @@ void Cell::update_position( double dt )
 	// if(sqrt(dist(old_position, position))>3* phenotype.geometry.radius)
 		// std::cout<<sqrt(dist(old_position, position))<<"old_position: "<<old_position<<", new position: "<< position<<", velocity: "<<velocity<<", previous_velocity: "<< previous_velocity<<std::endl;
 	
+	
+	static double min_x = get_default_microenvironment()->mesh.x_coordinates[0]; 
+	static double max_x = get_default_microenvironment()->mesh.x_coordinates[ get_default_microenvironment()->mesh.x_coordinates.size()-1 ];
+	static double min_y = get_default_microenvironment()->mesh.y_coordinates[0]; 
+	static double max_y = get_default_microenvironment()->mesh.y_coordinates[ get_default_microenvironment()->mesh.y_coordinates.size()-1 ];
+	static double min_z = get_default_microenvironment()->mesh.z_coordinates[0]; 
+	static double max_z = get_default_microenvironment()->mesh.z_coordinates[ get_default_microenvironment()->mesh.z_coordinates.size()-1 ];
+	// new check: January 2019 
+	 
+	if( position[0] < min_x )
+	{ position[0] = min_x; }
+	if( position[0] > max_x )
+	{ position[0] = max_x; }
+	
+	if( position[1] < min_y )
+	{ position[1] = min_y; }
+	if( position[1] > max_y )
+	{ position[1] = max_y; }
+	
+	if( position[2] < min_z )
+	{ position[2] = min_z; }
+	if( position[2] > max_z )
+	{ position[2] = max_z; }
+ 
+	// end new check on January 2019 -- make this a settable option 
+	
 	previous_velocity = velocity; 
 	
 	velocity[0]=0; velocity[1]=0; velocity[2]=0;
