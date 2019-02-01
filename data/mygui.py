@@ -1,1 +1,1 @@
-foomain_xml_filename = 'config_cancerbots.xml'
+foomain_xml_filename = 'PhysiCell-settings.xml'
