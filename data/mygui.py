@@ -1,1 +1,1 @@
-foomain_xml_filename = 'PhysiCell-settings.xml'
+foomain_xml_filename = 'PhysiCell_settings.xml'
