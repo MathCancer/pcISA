@@ -211,12 +211,12 @@ def run_sim_func(s):
             s.run(run_name, "-v ncn-hub_M@brown -n 8 -w 1440 pcISA-r7 config.xml") 
         else:
             # read_config.index = 0   # reset Dropdown 'Load Config' to 'DEFAULT' when Run interactively
-            s.run(run_name, "--local ../bin/cancerbots config.xml")
+            s.run(run_name, "--local ../bin/myproj config.xml")
     else:
         # reset Dropdown 'Load Config' to 'DEFAULT' when Run interactively
         # Warning: this will trigger read_config_cb() !!
         # read_config.index = 0   
-        s.run("../bin/cancerbots config.xml", runname=run_name)
+        s.run("../bin/myproj config.xml", runname=run_name)
 
     # with debug_view:
     #     print('run_sim_func DONE')
