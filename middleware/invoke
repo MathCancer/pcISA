@@ -1,4 +1,4 @@
 #!/bin/sh
 
-/usr/bin/invoke_app "$@" -C "start_jupyter -A -T @tool pcISA.ipynb" -t pcISA \
+/usr/bin/invoke_app "$@" -C "start_jupyter -A -T @tool pcISA.ipynb" -t pcisa \
                          -u anaconda3-5.1
