@@ -29,7 +29,9 @@ user_tab = UserTab()
 svg = SVGTab()
 sub = SubstrateTab()
 
-nanoHUB_flag = "home/nanohub" in os.environ['HOME']  # True/False (running on nanoHUB or not)
+nanoHUB_flag = False
+if( 'HOME' in os.environ.keys() ):
+    nanoHUB_flag = "home/nanohub" in os.environ['HOME'
 
 
 def read_config_cb(_b):
