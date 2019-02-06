@@ -31,7 +31,7 @@ sub = SubstrateTab()
 
 nanoHUB_flag = False
 if( 'HOME' in os.environ.keys() ):
-    nanoHUB_flag = "home/nanohub" in os.environ['HOME'
+    nanoHUB_flag = "home/nanohub" in os.environ['HOME']
 
 
 def read_config_cb(_b):
