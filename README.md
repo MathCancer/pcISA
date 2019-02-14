@@ -1,2 +1,3 @@
-# pc4cancerbots
-PhysiCell cancer biorobots example with Jupyter GUI
+# pcISA
+PhysiCell Invader-Scout-Attacker model (nanoHUB tool with Jupyter GUI)
+
