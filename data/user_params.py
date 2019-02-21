@@ -16,318 +16,459 @@ class UserTab(object):
         tab_height = '500px'
         stepsize = 10
 
-        style = {'description_width': '250px'}
+        #style = {'description_width': '250px'}
+        style = {'description_width': '25%'}
         layout = {'width': '400px'}
 
+        name_button_layout={'width':'25%'}
+        widget_layout = {'width': '15%'}
+        units_button_layout ={'width':'15%'}
+        desc_button_layout={'width':'45%'}
+
+        param_name1 = Button(description='resource_D', disabled=True, layout=name_button_layout)
+        param_name1.style.button_color = 'lightgreen'
+
         self.resource_D = FloatText(
-          description='resource_D',
           value=100000,
           step=10000,
-          style=style, layout=layout)
+          style=style, layout=widget_layout)
+
+        param_name2 = Button(description='resource_lambda', disabled=True, layout=name_button_layout)
+        param_name2.style.button_color = 'tan'
 
         self.resource_lambda = FloatText(
-          description='resource_lambda',
           value=0.1,
           step=0.01,
-          style=style, layout=layout)
+          style=style, layout=widget_layout)
+
+        param_name3 = Button(description='quorum_D', disabled=True, layout=name_button_layout)
+        param_name3.style.button_color = 'lightgreen'
 
         self.quorum_D = FloatText(
-          description='quorum_D',
           value=100000,
           step=10000,
-          style=style, layout=layout)
+          style=style, layout=widget_layout)
+
+        param_name4 = Button(description='quorum_lambda', disabled=True, layout=name_button_layout)
+        param_name4.style.button_color = 'tan'
 
         self.quorum_lambda = FloatText(
-          description='quorum_lambda',
           value=10,
           step=1,
-          style=style, layout=layout)
+          style=style, layout=widget_layout)
+
+        param_name5 = Button(description='death_signal_D', disabled=True, layout=name_button_layout)
+        param_name5.style.button_color = 'lightgreen'
 
         self.death_signal_D = FloatText(
-          description='death_signal_D',
           value=40000,
           step=1000,
-          style=style, layout=layout)
+          style=style, layout=widget_layout)
+
+        param_name6 = Button(description='death_signal_lambda', disabled=True, layout=name_button_layout)
+        param_name6.style.button_color = 'tan'
 
         self.death_signal_lambda = FloatText(
-          description='death_signal_lambda',
           value=1,
           step=0.1,
-          style=style, layout=layout)
+          style=style, layout=widget_layout)
+
+        param_name7 = Button(description='signal_D', disabled=True, layout=name_button_layout)
+        param_name7.style.button_color = 'lightgreen'
 
         self.signal_D = FloatText(
-          description='signal_D',
           value=25000,
           step=1000,
-          style=style, layout=layout)
+          style=style, layout=widget_layout)
+
+        param_name8 = Button(description='signal_lambda', disabled=True, layout=name_button_layout)
+        param_name8.style.button_color = 'tan'
 
         self.signal_lambda = FloatText(
-          description='signal_lambda',
           value=.1,
           step=0.01,
-          style=style, layout=layout)
+          style=style, layout=widget_layout)
+
+        param_name9 = Button(description='poison_D', disabled=True, layout=name_button_layout)
+        param_name9.style.button_color = 'lightgreen'
 
         self.poison_D = FloatText(
-          description='poison_D',
           value=50000,
           step=1000,
-          style=style, layout=layout)
+          style=style, layout=widget_layout)
+
+        param_name10 = Button(description='poison_lambda', disabled=True, layout=name_button_layout)
+        param_name10.style.button_color = 'tan'
 
         self.poison_lambda = FloatText(
-          description='poison_lambda',
           value=20,
           step=1,
-          style=style, layout=layout)
+          style=style, layout=widget_layout)
+
+        param_name11 = Button(description='number_of_invaders', disabled=True, layout=name_button_layout)
+        param_name11.style.button_color = 'lightgreen'
 
         self.number_of_invaders = IntText(
-          description='number_of_invaders',
           value=15,
           step=1,
-          style=style, layout=layout)
+          style=style, layout=widget_layout)
+
+        param_name12 = Button(description='number_of_suppliers', disabled=True, layout=name_button_layout)
+        param_name12.style.button_color = 'tan'
 
         self.number_of_suppliers = IntText(
-          description='number_of_suppliers',
           value=50,
           step=1,
-          style=style, layout=layout)
+          style=style, layout=widget_layout)
+
+        param_name13 = Button(description='number_of_scouts', disabled=True, layout=name_button_layout)
+        param_name13.style.button_color = 'lightgreen'
 
         self.number_of_scouts = IntText(
-          description='number_of_scouts',
           value=10,
           step=1,
-          style=style, layout=layout)
+          style=style, layout=widget_layout)
+
+        param_name14 = Button(description='number_of_attackers', disabled=True, layout=name_button_layout)
+        param_name14.style.button_color = 'tan'
 
         self.number_of_attackers = IntText(
-          description='number_of_attackers',
           value=50,
           step=1,
-          style=style, layout=layout)
+          style=style, layout=widget_layout)
+
+        param_name15 = Button(description='invader_max_birth_rate', disabled=True, layout=name_button_layout)
+        param_name15.style.button_color = 'lightgreen'
 
         self.invader_max_birth_rate = FloatText(
-          description='invader_max_birth_rate',
           value=0.0028,
           step=0.0001,
-          style=style, layout=layout)
+          style=style, layout=widget_layout)
+
+        param_name16 = Button(description='invader_max_death_rate', disabled=True, layout=name_button_layout)
+        param_name16.style.button_color = 'tan'
 
         self.invader_max_death_rate = FloatText(
-          description='invader_max_death_rate',
           value=0.001,
           step=0.0001,
-          style=style, layout=layout)
+          style=style, layout=widget_layout)
+
+        param_name17 = Button(description='invader_persistence_time', disabled=True, layout=name_button_layout)
+        param_name17.style.button_color = 'lightgreen'
 
         self.invader_persistence_time = FloatText(
-          description='invader_persistence_time',
           value=15,
           step=1,
-          style=style, layout=layout)
+          style=style, layout=widget_layout)
+
+        param_name18 = Button(description='invader_migration_speed', disabled=True, layout=name_button_layout)
+        param_name18.style.button_color = 'tan'
 
         self.invader_migration_speed = FloatText(
-          description='invader_migration_speed',
           value=0.25,
           step=0.01,
-          style=style, layout=layout)
+          style=style, layout=widget_layout)
+
+        param_name19 = Button(description='invader_migration_bias', disabled=True, layout=name_button_layout)
+        param_name19.style.button_color = 'lightgreen'
 
         self.invader_migration_bias = FloatText(
-          description='invader_migration_bias',
           value=0.5,
           step=0.1,
-          style=style, layout=layout)
+          style=style, layout=widget_layout)
+
+        param_name20 = Button(description='invader_secretion_rate', disabled=True, layout=name_button_layout)
+        param_name20.style.button_color = 'tan'
 
         self.invader_secretion_rate = FloatText(
-          description='invader_secretion_rate',
           value=100,
           step=10,
-          style=style, layout=layout)
+          style=style, layout=widget_layout)
+
+        param_name21 = Button(description='invader_quorum_weight', disabled=True, layout=name_button_layout)
+        param_name21.style.button_color = 'lightgreen'
 
         self.invader_quorum_weight = FloatText(
-          description='invader_quorum_weight',
           value=.1,
           step=0.01,
-          style=style, layout=layout)
+          style=style, layout=widget_layout)
+
+        param_name22 = Button(description='scout_persistence_time', disabled=True, layout=name_button_layout)
+        param_name22.style.button_color = 'tan'
 
         self.scout_persistence_time = FloatText(
-          description='scout_persistence_time',
           value=15,
           step=1,
-          style=style, layout=layout)
+          style=style, layout=widget_layout)
+
+        param_name23 = Button(description='scout_migration_speed', disabled=True, layout=name_button_layout)
+        param_name23.style.button_color = 'lightgreen'
 
         self.scout_migration_speed = FloatText(
-          description='scout_migration_speed',
           value=.5,
           step=0.1,
-          style=style, layout=layout)
+          style=style, layout=widget_layout)
+
+        param_name24 = Button(description='scout_migration_bias', disabled=True, layout=name_button_layout)
+        param_name24.style.button_color = 'tan'
 
         self.scout_migration_bias = FloatText(
-          description='scout_migration_bias',
           value=0.125,
           step=0.01,
-          style=style, layout=layout)
+          style=style, layout=widget_layout)
+
+        param_name25 = Button(description='scout_secretion_rate', disabled=True, layout=name_button_layout)
+        param_name25.style.button_color = 'lightgreen'
 
         self.scout_secretion_rate = FloatText(
-          description='scout_secretion_rate',
           value=100,
           step=10,
-          style=style, layout=layout)
+          style=style, layout=widget_layout)
+
+        param_name26 = Button(description='scout_signal_threshold', disabled=True, layout=name_button_layout)
+        param_name26.style.button_color = 'tan'
 
         self.scout_signal_threshold = FloatText(
-          description='scout_signal_threshold',
           value=0.1,
           step=0.01,
-          style=style, layout=layout)
+          style=style, layout=widget_layout)
+
+        param_name27 = Button(description='attacker_max_birth_rate', disabled=True, layout=name_button_layout)
+        param_name27.style.button_color = 'lightgreen'
 
         self.attacker_max_birth_rate = FloatText(
-          description='attacker_max_birth_rate',
           value=0.0005,
           step=0.0001,
-          style=style, layout=layout)
+          style=style, layout=widget_layout)
+
+        param_name28 = Button(description='attacker_max_death_rate', disabled=True, layout=name_button_layout)
+        param_name28.style.button_color = 'tan'
 
         self.attacker_max_death_rate = FloatText(
-          description='attacker_max_death_rate',
           value=0.0001,
           step=1e-05,
-          style=style, layout=layout)
+          style=style, layout=widget_layout)
+
+        param_name29 = Button(description='attacker_persistence_time', disabled=True, layout=name_button_layout)
+        param_name29.style.button_color = 'lightgreen'
 
         self.attacker_persistence_time = FloatText(
-          description='attacker_persistence_time',
           value=15,
           step=1,
-          style=style, layout=layout)
+          style=style, layout=widget_layout)
+
+        param_name30 = Button(description='attacker_migration_speed', disabled=True, layout=name_button_layout)
+        param_name30.style.button_color = 'tan'
 
         self.attacker_migration_speed = FloatText(
-          description='attacker_migration_speed',
           value=1,
           step=0.1,
-          style=style, layout=layout)
+          style=style, layout=widget_layout)
+
+        param_name31 = Button(description='attacker_migration_bias', disabled=True, layout=name_button_layout)
+        param_name31.style.button_color = 'lightgreen'
 
         self.attacker_migration_bias = FloatText(
-          description='attacker_migration_bias',
           value=0.25,
           step=0.01,
-          style=style, layout=layout)
+          style=style, layout=widget_layout)
+
+        param_name32 = Button(description='attacker_secretion_rate', disabled=True, layout=name_button_layout)
+        param_name32.style.button_color = 'tan'
 
         self.attacker_secretion_rate = FloatText(
-          description='attacker_secretion_rate',
           value=100,
           step=10,
-          style=style, layout=layout)
+          style=style, layout=widget_layout)
+
+        param_name33 = Button(description='attacker_signal_threshold', disabled=True, layout=name_button_layout)
+        param_name33.style.button_color = 'lightgreen'
 
         self.attacker_signal_threshold = FloatText(
-          description='attacker_signal_threshold',
           value=0.1,
           step=0.01,
-          style=style, layout=layout)
+          style=style, layout=widget_layout)
+
+        param_name34 = Button(description='supplier_secretion_rate', disabled=True, layout=name_button_layout)
+        param_name34.style.button_color = 'tan'
 
         self.supplier_secretion_rate = FloatText(
-          description='supplier_secretion_rate',
           value=100,
           step=10,
-          style=style, layout=layout)
+          style=style, layout=widget_layout)
 
-        param_button_layout={'width':'400px'} 
+        units_button1 = Button(description='micron^2/min', disabled=True, layout=units_button_layout) 
+        units_button1.style.button_color = 'lightgreen'
+        units_button2 = Button(description='1/min', disabled=True, layout=units_button_layout) 
+        units_button2.style.button_color = 'tan'
+        units_button3 = Button(description='micron^2/min', disabled=True, layout=units_button_layout) 
+        units_button3.style.button_color = 'lightgreen'
+        units_button4 = Button(description='1/min', disabled=True, layout=units_button_layout) 
+        units_button4.style.button_color = 'tan'
+        units_button5 = Button(description='micron^2/min', disabled=True, layout=units_button_layout) 
+        units_button5.style.button_color = 'lightgreen'
+        units_button6 = Button(description='1/min', disabled=True, layout=units_button_layout) 
+        units_button6.style.button_color = 'tan'
+        units_button7 = Button(description='micron^2/min', disabled=True, layout=units_button_layout) 
+        units_button7.style.button_color = 'lightgreen'
+        units_button8 = Button(description='1/min', disabled=True, layout=units_button_layout) 
+        units_button8.style.button_color = 'tan'
+        units_button9 = Button(description='micron^2/min', disabled=True, layout=units_button_layout) 
+        units_button9.style.button_color = 'lightgreen'
+        units_button10 = Button(description='1/min', disabled=True, layout=units_button_layout) 
+        units_button10.style.button_color = 'tan'
+        units_button11 = Button(description='', disabled=True, layout=units_button_layout) 
+        units_button11.style.button_color = 'lightgreen'
+        units_button12 = Button(description='', disabled=True, layout=units_button_layout) 
+        units_button12.style.button_color = 'tan'
+        units_button13 = Button(description='', disabled=True, layout=units_button_layout) 
+        units_button13.style.button_color = 'lightgreen'
+        units_button14 = Button(description='', disabled=True, layout=units_button_layout) 
+        units_button14.style.button_color = 'tan'
+        units_button15 = Button(description='1/min', disabled=True, layout=units_button_layout) 
+        units_button15.style.button_color = 'lightgreen'
+        units_button16 = Button(description='1/min', disabled=True, layout=units_button_layout) 
+        units_button16.style.button_color = 'tan'
+        units_button17 = Button(description='min', disabled=True, layout=units_button_layout) 
+        units_button17.style.button_color = 'lightgreen'
+        units_button18 = Button(description='micron/min', disabled=True, layout=units_button_layout) 
+        units_button18.style.button_color = 'tan'
+        units_button19 = Button(description='', disabled=True, layout=units_button_layout) 
+        units_button19.style.button_color = 'lightgreen'
+        units_button20 = Button(description='1/min', disabled=True, layout=units_button_layout) 
+        units_button20.style.button_color = 'tan'
+        units_button21 = Button(description='', disabled=True, layout=units_button_layout) 
+        units_button21.style.button_color = 'lightgreen'
+        units_button22 = Button(description='min', disabled=True, layout=units_button_layout) 
+        units_button22.style.button_color = 'tan'
+        units_button23 = Button(description='micron/min', disabled=True, layout=units_button_layout) 
+        units_button23.style.button_color = 'lightgreen'
+        units_button24 = Button(description='', disabled=True, layout=units_button_layout) 
+        units_button24.style.button_color = 'tan'
+        units_button25 = Button(description='1/min', disabled=True, layout=units_button_layout) 
+        units_button25.style.button_color = 'lightgreen'
+        units_button26 = Button(description='', disabled=True, layout=units_button_layout) 
+        units_button26.style.button_color = 'tan'
+        units_button27 = Button(description='1/min', disabled=True, layout=units_button_layout) 
+        units_button27.style.button_color = 'lightgreen'
+        units_button28 = Button(description='1/min', disabled=True, layout=units_button_layout) 
+        units_button28.style.button_color = 'tan'
+        units_button29 = Button(description='min', disabled=True, layout=units_button_layout) 
+        units_button29.style.button_color = 'lightgreen'
+        units_button30 = Button(description='micron/min', disabled=True, layout=units_button_layout) 
+        units_button30.style.button_color = 'tan'
+        units_button31 = Button(description='', disabled=True, layout=units_button_layout) 
+        units_button31.style.button_color = 'lightgreen'
+        units_button32 = Button(description='1/min', disabled=True, layout=units_button_layout) 
+        units_button32.style.button_color = 'tan'
+        units_button33 = Button(description='', disabled=True, layout=units_button_layout) 
+        units_button33.style.button_color = 'lightgreen'
+        units_button34 = Button(description='1/min', disabled=True, layout=units_button_layout) 
+        units_button34.style.button_color = 'tan'
 
-        desc_row1 = Button(description='resource diffusion coefficient', disabled=True, layout=param_button_layout) 
-        desc_row1.style.button_color = 'lightgreen'
-        desc_row2 = Button(description='resource decay rate', disabled=True, layout=param_button_layout) 
-        desc_row2.style.button_color = 'tan'
-        desc_row3 = Button(description='quorum diffusion coefficient', disabled=True, layout=param_button_layout) 
-        desc_row3.style.button_color = 'lightgreen'
-        desc_row4 = Button(description='quorum decay rate', disabled=True, layout=param_button_layout) 
-        desc_row4.style.button_color = 'tan'
-        desc_row5 = Button(description='death signal diffusion coefficient', disabled=True, layout=param_button_layout) 
-        desc_row5.style.button_color = 'lightgreen'
-        desc_row6 = Button(description='death signal decay rate', disabled=True, layout=param_button_layout) 
-        desc_row6.style.button_color = 'tan'
-        desc_row7 = Button(description='attack signal diffusion coefficient', disabled=True, layout=param_button_layout) 
-        desc_row7.style.button_color = 'lightgreen'
-        desc_row8 = Button(description='attack signal decay rate', disabled=True, layout=param_button_layout) 
-        desc_row8.style.button_color = 'tan'
-        desc_row9 = Button(description='poison diffusion coefficient', disabled=True, layout=param_button_layout) 
-        desc_row9.style.button_color = 'lightgreen'
-        desc_row10 = Button(description='poison decay rate', disabled=True, layout=param_button_layout) 
-        desc_row10.style.button_color = 'tan'
-        desc_row11 = Button(description='number of randomly placed invaders', disabled=True, layout=param_button_layout) 
-        desc_row11.style.button_color = 'lightgreen'
-        desc_row12 = Button(description='number of randomly placed suppliers', disabled=True, layout=param_button_layout) 
-        desc_row12.style.button_color = 'tan'
-        desc_row13 = Button(description='number of randomly placed scouts', disabled=True, layout=param_button_layout) 
-        desc_row13.style.button_color = 'lightgreen'
-        desc_row14 = Button(description='number of randomly placed attackers', disabled=True, layout=param_button_layout) 
-        desc_row14.style.button_color = 'tan'
-        desc_row15 = Button(description='max birth rate for invaders', disabled=True, layout=param_button_layout) 
-        desc_row15.style.button_color = 'lightgreen'
-        desc_row16 = Button(description='max death rate for invaders', disabled=True, layout=param_button_layout) 
-        desc_row16.style.button_color = 'tan'
-        desc_row17 = Button(description='persistence time for invader migration', disabled=True, layout=param_button_layout) 
-        desc_row17.style.button_color = 'lightgreen'
-        desc_row18 = Button(description='speed of invader cells', disabled=True, layout=param_button_layout) 
-        desc_row18.style.button_color = 'tan'
-        desc_row19 = Button(description='invader migration bias', disabled=True, layout=param_button_layout) 
-        desc_row19.style.button_color = 'lightgreen'
-        desc_row20 = Button(description='rate invaders secrete their signals', disabled=True, layout=param_button_layout) 
-        desc_row20.style.button_color = 'tan'
-        desc_row21 = Button(description='motile direction = w*grad(Q) - (1-w)*grad(D)', disabled=True, layout=param_button_layout) 
-        desc_row21.style.button_color = 'lightgreen'
-        desc_row22 = Button(description='persistence time for scout migration', disabled=True, layout=param_button_layout) 
-        desc_row22.style.button_color = 'tan'
-        desc_row23 = Button(description='speed of scout cells', disabled=True, layout=param_button_layout) 
-        desc_row23.style.button_color = 'lightgreen'
-        desc_row24 = Button(description='scout migration bias', disabled=True, layout=param_button_layout) 
-        desc_row24.style.button_color = 'tan'
-        desc_row25 = Button(description='rate scouts secrete their signals', disabled=True, layout=param_button_layout) 
-        desc_row25.style.button_color = 'lightgreen'
-        desc_row26 = Button(description='scouts release S if Q > threshold', disabled=True, layout=param_button_layout) 
-        desc_row26.style.button_color = 'tan'
-        desc_row27 = Button(description='max birth rate for attackers', disabled=True, layout=param_button_layout) 
-        desc_row27.style.button_color = 'lightgreen'
-        desc_row28 = Button(description='max death rate for attackers', disabled=True, layout=param_button_layout) 
-        desc_row28.style.button_color = 'tan'
-        desc_row29 = Button(description='persistence time for attacker migration', disabled=True, layout=param_button_layout) 
-        desc_row29.style.button_color = 'lightgreen'
-        desc_row30 = Button(description='speed of attacker cells', disabled=True, layout=param_button_layout) 
-        desc_row30.style.button_color = 'tan'
-        desc_row31 = Button(description='attacker migration bias', disabled=True, layout=param_button_layout) 
-        desc_row31.style.button_color = 'lightgreen'
-        desc_row32 = Button(description='rate attackers secrete their signals', disabled=True, layout=param_button_layout) 
-        desc_row32.style.button_color = 'tan'
-        desc_row33 = Button(description='attackers release P if S > threshold', disabled=True, layout=param_button_layout) 
-        desc_row33.style.button_color = 'lightgreen'
-        desc_row34 = Button(description='rate suppliers release resource', disabled=True, layout=param_button_layout) 
-        desc_row34.style.button_color = 'tan'
+        desc_button1 = Button(description='resource diffusion coefficient', disabled=True, layout=desc_button_layout) 
+        desc_button1.style.button_color = 'lightgreen'
+        desc_button2 = Button(description='resource decay rate', disabled=True, layout=desc_button_layout) 
+        desc_button2.style.button_color = 'tan'
+        desc_button3 = Button(description='quorum diffusion coefficient', disabled=True, layout=desc_button_layout) 
+        desc_button3.style.button_color = 'lightgreen'
+        desc_button4 = Button(description='quorum decay rate', disabled=True, layout=desc_button_layout) 
+        desc_button4.style.button_color = 'tan'
+        desc_button5 = Button(description='death signal diffusion coefficient', disabled=True, layout=desc_button_layout) 
+        desc_button5.style.button_color = 'lightgreen'
+        desc_button6 = Button(description='death signal decay rate', disabled=True, layout=desc_button_layout) 
+        desc_button6.style.button_color = 'tan'
+        desc_button7 = Button(description='attack signal diffusion coefficient', disabled=True, layout=desc_button_layout) 
+        desc_button7.style.button_color = 'lightgreen'
+        desc_button8 = Button(description='attack signal decay rate', disabled=True, layout=desc_button_layout) 
+        desc_button8.style.button_color = 'tan'
+        desc_button9 = Button(description='poison diffusion coefficient', disabled=True, layout=desc_button_layout) 
+        desc_button9.style.button_color = 'lightgreen'
+        desc_button10 = Button(description='poison decay rate', disabled=True, layout=desc_button_layout) 
+        desc_button10.style.button_color = 'tan'
+        desc_button11 = Button(description='number of randomly placed invaders', disabled=True, layout=desc_button_layout) 
+        desc_button11.style.button_color = 'lightgreen'
+        desc_button12 = Button(description='number of randomly placed suppliers', disabled=True, layout=desc_button_layout) 
+        desc_button12.style.button_color = 'tan'
+        desc_button13 = Button(description='number of randomly placed scouts', disabled=True, layout=desc_button_layout) 
+        desc_button13.style.button_color = 'lightgreen'
+        desc_button14 = Button(description='number of randomly placed attackers', disabled=True, layout=desc_button_layout) 
+        desc_button14.style.button_color = 'tan'
+        desc_button15 = Button(description='max birth rate for invaders', disabled=True, layout=desc_button_layout) 
+        desc_button15.style.button_color = 'lightgreen'
+        desc_button16 = Button(description='max death rate for invaders', disabled=True, layout=desc_button_layout) 
+        desc_button16.style.button_color = 'tan'
+        desc_button17 = Button(description='persistence time for invader migration', disabled=True, layout=desc_button_layout) 
+        desc_button17.style.button_color = 'lightgreen'
+        desc_button18 = Button(description='speed of invader cells', disabled=True, layout=desc_button_layout) 
+        desc_button18.style.button_color = 'tan'
+        desc_button19 = Button(description='invader migration bias', disabled=True, layout=desc_button_layout) 
+        desc_button19.style.button_color = 'lightgreen'
+        desc_button20 = Button(description='rate invaders secrete their signals', disabled=True, layout=desc_button_layout) 
+        desc_button20.style.button_color = 'tan'
+        desc_button21 = Button(description='motile direction = w*grad(Q) - (1-w)*grad(D)', disabled=True, layout=desc_button_layout) 
+        desc_button21.style.button_color = 'lightgreen'
+        desc_button22 = Button(description='persistence time for scout migration', disabled=True, layout=desc_button_layout) 
+        desc_button22.style.button_color = 'tan'
+        desc_button23 = Button(description='speed of scout cells', disabled=True, layout=desc_button_layout) 
+        desc_button23.style.button_color = 'lightgreen'
+        desc_button24 = Button(description='scout migration bias', disabled=True, layout=desc_button_layout) 
+        desc_button24.style.button_color = 'tan'
+        desc_button25 = Button(description='rate scouts secrete their signals', disabled=True, layout=desc_button_layout) 
+        desc_button25.style.button_color = 'lightgreen'
+        desc_button26 = Button(description='scouts release S if Q > threshold', disabled=True, layout=desc_button_layout) 
+        desc_button26.style.button_color = 'tan'
+        desc_button27 = Button(description='max birth rate for attackers', disabled=True, layout=desc_button_layout) 
+        desc_button27.style.button_color = 'lightgreen'
+        desc_button28 = Button(description='max death rate for attackers', disabled=True, layout=desc_button_layout) 
+        desc_button28.style.button_color = 'tan'
+        desc_button29 = Button(description='persistence time for attacker migration', disabled=True, layout=desc_button_layout) 
+        desc_button29.style.button_color = 'lightgreen'
+        desc_button30 = Button(description='speed of attacker cells', disabled=True, layout=desc_button_layout) 
+        desc_button30.style.button_color = 'tan'
+        desc_button31 = Button(description='attacker migration bias', disabled=True, layout=desc_button_layout) 
+        desc_button31.style.button_color = 'lightgreen'
+        desc_button32 = Button(description='rate attackers secrete their signals', disabled=True, layout=desc_button_layout) 
+        desc_button32.style.button_color = 'tan'
+        desc_button33 = Button(description='attackers release P if S > threshold', disabled=True, layout=desc_button_layout) 
+        desc_button33.style.button_color = 'lightgreen'
+        desc_button34 = Button(description='rate suppliers release resource', disabled=True, layout=desc_button_layout) 
+        desc_button34.style.button_color = 'tan'
 
-        row1 = [self.resource_D, Label('micron^2/min' , layout=Layout(flex='1 1 auto', width='auto')), desc_row1] 
-        row2 = [self.resource_lambda, Label('1/min' , layout=Layout(flex='1 1 auto', width='auto')), desc_row2] 
-        row3 = [self.quorum_D, Label('micron^2/min' , layout=Layout(flex='1 1 auto', width='auto')), desc_row3] 
-        row4 = [self.quorum_lambda, Label('1/min' , layout=Layout(flex='1 1 auto', width='auto')), desc_row4] 
-        row5 = [self.death_signal_D, Label('micron^2/min' , layout=Layout(flex='1 1 auto', width='auto')), desc_row5] 
-        row6 = [self.death_signal_lambda, Label('1/min' , layout=Layout(flex='1 1 auto', width='auto')), desc_row6] 
-        row7 = [self.signal_D, Label('micron^2/min' , layout=Layout(flex='1 1 auto', width='auto')), desc_row7] 
-        row8 = [self.signal_lambda, Label('1/min' , layout=Layout(flex='1 1 auto', width='auto')), desc_row8] 
-        row9 = [self.poison_D, Label('micron^2/min' , layout=Layout(flex='1 1 auto', width='auto')), desc_row9] 
-        row10 = [self.poison_lambda, Label('1/min' , layout=Layout(flex='1 1 auto', width='auto')), desc_row10] 
-        row11 = [self.number_of_invaders, Label('' , layout=Layout(flex='1 1 auto', width='auto')), desc_row11] 
-        row12 = [self.number_of_suppliers, Label('' , layout=Layout(flex='1 1 auto', width='auto')), desc_row12] 
-        row13 = [self.number_of_scouts, Label('' , layout=Layout(flex='1 1 auto', width='auto')), desc_row13] 
-        row14 = [self.number_of_attackers, Label('' , layout=Layout(flex='1 1 auto', width='auto')), desc_row14] 
-        row15 = [self.invader_max_birth_rate, Label('1/min' , layout=Layout(flex='1 1 auto', width='auto')), desc_row15] 
-        row16 = [self.invader_max_death_rate, Label('1/min' , layout=Layout(flex='1 1 auto', width='auto')), desc_row16] 
-        row17 = [self.invader_persistence_time, Label('min' , layout=Layout(flex='1 1 auto', width='auto')), desc_row17] 
-        row18 = [self.invader_migration_speed, Label('micron/min' , layout=Layout(flex='1 1 auto', width='auto')), desc_row18] 
-        row19 = [self.invader_migration_bias, Label('' , layout=Layout(flex='1 1 auto', width='auto')), desc_row19] 
-        row20 = [self.invader_secretion_rate, Label('1/min' , layout=Layout(flex='1 1 auto', width='auto')), desc_row20] 
-        row21 = [self.invader_quorum_weight, Label('' , layout=Layout(flex='1 1 auto', width='auto')), desc_row21] 
-        row22 = [self.scout_persistence_time, Label('min' , layout=Layout(flex='1 1 auto', width='auto')), desc_row22] 
-        row23 = [self.scout_migration_speed, Label('micron/min' , layout=Layout(flex='1 1 auto', width='auto')), desc_row23] 
-        row24 = [self.scout_migration_bias, Label('' , layout=Layout(flex='1 1 auto', width='auto')), desc_row24] 
-        row25 = [self.scout_secretion_rate, Label('1/min' , layout=Layout(flex='1 1 auto', width='auto')), desc_row25] 
-        row26 = [self.scout_signal_threshold, Label('' , layout=Layout(flex='1 1 auto', width='auto')), desc_row26] 
-        row27 = [self.attacker_max_birth_rate, Label('1/min' , layout=Layout(flex='1 1 auto', width='auto')), desc_row27] 
-        row28 = [self.attacker_max_death_rate, Label('1/min' , layout=Layout(flex='1 1 auto', width='auto')), desc_row28] 
-        row29 = [self.attacker_persistence_time, Label('min' , layout=Layout(flex='1 1 auto', width='auto')), desc_row29] 
-        row30 = [self.attacker_migration_speed, Label('micron/min' , layout=Layout(flex='1 1 auto', width='auto')), desc_row30] 
-        row31 = [self.attacker_migration_bias, Label('' , layout=Layout(flex='1 1 auto', width='auto')), desc_row31] 
-        row32 = [self.attacker_secretion_rate, Label('1/min' , layout=Layout(flex='1 1 auto', width='auto')), desc_row32] 
-        row33 = [self.attacker_signal_threshold, Label('' , layout=Layout(flex='1 1 auto', width='auto')), desc_row33] 
-        row34 = [self.supplier_secretion_rate, Label('1/min' , layout=Layout(flex='1 1 auto', width='auto')), desc_row34] 
+        row1 = [param_name1, self.resource_D, units_button1, desc_button1] 
+        row2 = [param_name2, self.resource_lambda, units_button2, desc_button2] 
+        row3 = [param_name3, self.quorum_D, units_button3, desc_button3] 
+        row4 = [param_name4, self.quorum_lambda, units_button4, desc_button4] 
+        row5 = [param_name5, self.death_signal_D, units_button5, desc_button5] 
+        row6 = [param_name6, self.death_signal_lambda, units_button6, desc_button6] 
+        row7 = [param_name7, self.signal_D, units_button7, desc_button7] 
+        row8 = [param_name8, self.signal_lambda, units_button8, desc_button8] 
+        row9 = [param_name9, self.poison_D, units_button9, desc_button9] 
+        row10 = [param_name10, self.poison_lambda, units_button10, desc_button10] 
+        row11 = [param_name11, self.number_of_invaders, units_button11, desc_button11] 
+        row12 = [param_name12, self.number_of_suppliers, units_button12, desc_button12] 
+        row13 = [param_name13, self.number_of_scouts, units_button13, desc_button13] 
+        row14 = [param_name14, self.number_of_attackers, units_button14, desc_button14] 
+        row15 = [param_name15, self.invader_max_birth_rate, units_button15, desc_button15] 
+        row16 = [param_name16, self.invader_max_death_rate, units_button16, desc_button16] 
+        row17 = [param_name17, self.invader_persistence_time, units_button17, desc_button17] 
+        row18 = [param_name18, self.invader_migration_speed, units_button18, desc_button18] 
+        row19 = [param_name19, self.invader_migration_bias, units_button19, desc_button19] 
+        row20 = [param_name20, self.invader_secretion_rate, units_button20, desc_button20] 
+        row21 = [param_name21, self.invader_quorum_weight, units_button21, desc_button21] 
+        row22 = [param_name22, self.scout_persistence_time, units_button22, desc_button22] 
+        row23 = [param_name23, self.scout_migration_speed, units_button23, desc_button23] 
+        row24 = [param_name24, self.scout_migration_bias, units_button24, desc_button24] 
+        row25 = [param_name25, self.scout_secretion_rate, units_button25, desc_button25] 
+        row26 = [param_name26, self.scout_signal_threshold, units_button26, desc_button26] 
+        row27 = [param_name27, self.attacker_max_birth_rate, units_button27, desc_button27] 
+        row28 = [param_name28, self.attacker_max_death_rate, units_button28, desc_button28] 
+        row29 = [param_name29, self.attacker_persistence_time, units_button29, desc_button29] 
+        row30 = [param_name30, self.attacker_migration_speed, units_button30, desc_button30] 
+        row31 = [param_name31, self.attacker_migration_bias, units_button31, desc_button31] 
+        row32 = [param_name32, self.attacker_secretion_rate, units_button32, desc_button32] 
+        row33 = [param_name33, self.attacker_signal_threshold, units_button33, desc_button33] 
+        row34 = [param_name34, self.supplier_secretion_rate, units_button34, desc_button34] 
 
         box_layout = Layout(display='flex', flex_flow='row', align_items='stretch', width='100%')
         box1 = Box(children=row1, layout=box_layout)
