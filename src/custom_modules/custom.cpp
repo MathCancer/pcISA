@@ -387,9 +387,9 @@ std::vector<std::string> paint_by_numbers( Cell* pCell )
 	
 	if( pCell->type == 2 )
 	{
-		color = "green";
+		color = "lime";
 		if( pCell->phenotype.death.dead == true )
-		{ color = "darkgreen"; }
+		{ color = "green"; }
 	}
 	
 	if( pCell->type == 3 )
