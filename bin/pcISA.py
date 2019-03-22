@@ -318,7 +318,7 @@ homedir = os.getcwd()
 #desc_button6 = Button(description='pcISA', disabled=True, layout=desc_button_layout) 
 #title_button = widgets.Button(description='pcISA', disabled=True) 
 #title_button.style.button_color = 'tan'
-tool_title = widgets.Label(r'\(\textbf{pcISA: Invader-Supplier-Attacker}\)')
+tool_title = widgets.Label(r'\(\textbf{pcISA: Invader-Scout-Attacker}\)')
 if nanoHUB_flag:
     remote_cb = widgets.Checkbox(indent=False, value=False, description='Submit as Batch Job to Clusters/Grid')
     #gui = widgets.VBox(children=[read_config, tabs, write_config_row, remote_cb, run_button.w])
