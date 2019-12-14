@@ -8,7 +8,7 @@ import datetime
 import tempfile
 from about import AboutTab
 from config import ConfigTab
-# from microenv_params import MicroenvTab
+from microenv_params import MicroenvTab
 from user_params import UserTab
 # from svg import SVGTab
 from substrates import SubstrateTab
@@ -41,7 +41,7 @@ full_xml_filename = os.path.abspath(xml_file)
 
 tree = ET.parse(full_xml_filename)  # this file cannot be overwritten; part of tool distro
 xml_root = tree.getroot()
-# microenv_tab = MicroenvTab()
+microenv_tab = MicroenvTab()
 user_tab = UserTab()
 # svg = SVGTab()
 sub = SubstrateTab()
@@ -122,7 +122,7 @@ def write_config_file(name):
     tree = ET.parse(full_xml_filename)  # this file cannot be overwritten; part of tool distro
     xml_root = tree.getroot()
     config_tab.fill_xml(xml_root)
-    # microenv_tab.fill_xml(xml_root)
+    microenv_tab.fill_xml(xml_root)
     user_tab.fill_xml(xml_root)
     tree.write(name)
 
@@ -203,7 +203,7 @@ def fill_gui_params(config_file):
     tree = ET.parse(config_file)
     xml_root = tree.getroot()
     config_tab.fill_gui(xml_root)
-    # microenv_tab.fill_gui(xml_root)
+    microenv_tab.fill_gui(xml_root)
     user_tab.fill_gui(xml_root)
 
 
@@ -379,11 +379,8 @@ if nanoHUB_flag or hublib_flag:
 
 tab_height = 'auto'
 tab_layout = widgets.Layout(width='auto',height=tab_height, overflow_y='scroll',)   # border='2px solid black',
-#titles = ['About', 'Config Basics', 'Microenvironment', 'User Params', 'Out: Cell Plots', 'Out: Substrate Plots']
-# titles = ['About', 'Config Basics', 'Microenvironment', 'User Params', 'Out: Plots']
-titles = ['About', 'Config Basics', 'User Params', 'Out: Plots']
-# tabs = widgets.Tab(children=[about_tab.tab, config_tab.tab, microenv_tab.tab, user_tab.tab, sub.tab],
-tabs = widgets.Tab(children=[about_tab.tab, config_tab.tab, user_tab.tab, sub.tab],
+titles = ['About', 'Config Basics', 'Microenvironment', 'User Params', 'Out: Plots']
+tabs = widgets.Tab(children=[about_tab.tab, config_tab.tab, microenv_tab.tab, user_tab.tab, sub.tab],
                    _titles={i: t for i, t in enumerate(titles)},
                    layout=tab_layout)
 

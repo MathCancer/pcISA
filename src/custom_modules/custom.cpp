@@ -223,7 +223,7 @@ void create_cell_types( void )
 	return; 
 }
 
-void setup_microenvironment( void )
+void setup_microenvironment_orig( void )
 {
 	// set domain parameters 
 	
@@ -285,6 +285,20 @@ void setup_microenvironment( void )
 	
 	initialize_microenvironment(); 	
 	
+	return; 
+}
+
+void setup_microenvironment( void )
+{
+	// make sure to override and go back to 2D 
+	if( default_microenvironment_options.simulate_2D == false )
+	{
+		std::cout << "Warning: overriding XML config option and setting to 2D!" << std::endl; 
+		default_microenvironment_options.simulate_2D = true; 
+	}
+	
+	// initialize BioFVM 
+	initialize_microenvironment(); 	
 	return; 
 }
 
